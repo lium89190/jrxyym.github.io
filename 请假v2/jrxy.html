@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>今日校园</title>
+</head>
+<body>
+  <span style="display: flex; align-items: center; justify-content: space-around;">
+    <span id="app" style="max-width: 390px;max-height:844px;">
+      <iframe id="topFrame" style="display: inline" width="390" height="844" src="./index.html"></iframe>
+    </span>
+    <span>
+      <label style="display: flex; justify-content: start;">附件</label>
+      <input type="file" id="attachAppendInput" accept="image/*">
+    </span>
+  </span>
+</body>
+<script>
+  const frame = document.getElementById('topFrame');
+  frame.addEventListener('load', () => {
+    const frameDoc = frame.contentDocument;
+    const attachContainer = frameDoc.getElementById('attachContainer');
+
+    const attachAppendInput = document.getElementById('attachAppendInput');
+
+
+    attachAppendInput.addEventListener('change', (event) => {
+      const file = event.target.files[0]; // 获取用户选择的第一个文件
+
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader(); // 创建FileReader对象来读取文件内容
+
+        // 文件读取完成后的处理
+        reader.onload = (e) => {
+          // 创建一个新的img元素[3,5](@ref)
+          const imgElement = document.createElement('img');
+          // 将图片数据设置为img的src属性[5](@ref)
+          imgElement.src = e.target.result;
+          // 为图片设置替代文本[7](@ref)
+          imgElement.alt = 'attachment';
+
+          // 将图片添加到显示容器中[3,5](@ref)
+          attachContainer.appendChild(imgElement);
+        };
+
+        // 如果文件读取失败，提示用户
+        reader.onerror = () => {
+          alert('读取图片时发生错误，请重试。');
+        };
+
+        // 开始将文件读取为Data URL（Base64编码的字符串）[3](@ref)
+        reader.readAsDataURL(file);
+      } else if (file) {
+        // 如果选择的不是图片文件，提示用户
+        alert('请选择一个有效的图片文件！');
+      }
+    });
+  });
+</script>
+</html>

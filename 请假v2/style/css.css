@@ -5,7 +5,7 @@ body{   /*全局*/
     background-color: rgba(240,245,247,1);
     height: 805px;
 }
-#top{   /*顶部标题*/ 
+#top{   /*顶部标题*/
     position: fixed;
     padding-top: 14px;
     height: 32px;
@@ -22,7 +22,7 @@ body{   /*全局*/
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 8px;    /*下划线距离*/
-    
+
     color: rgba(61,153,247,0.9);
     font-weight: bold;
     border-bottom: 3px solid rgba(61,153,247,0.9);
@@ -187,7 +187,7 @@ body{   /*全局*/
     font-size: 12.5px;
     margin-left: -8px;
     width: 104%;
-    height: 270px;
+    height: 380px;
 }
 .title{     /*我的请假申请*/
     font-weight: bold;
@@ -214,24 +214,38 @@ body{   /*全局*/
 .splc{  /*审批流程*/
     margin-top: 90px;
 }
-.qjyy{  /*请假原因*/
+.jjlxr{  /*审批流程*/
     margin-top: 115px;
 }
-.fqwz{  /*发起位置*/
+.qjyy{  /*请假原因*/
     margin-top: 140px;
 }
-#wz{  /*位置*/ 
+.fqwz{  /*发起位置*/
+    margin-top: 165px;
+}
+#wz{  /*位置*/
     color: rgba(61,153,247,0.9);
 }
 .csr{   /*抄送人*/
-    margin-top: 165px;
-}
-.ssxx{  /*宿舍信息*/ 
     margin-top: 190px;
+}
+.mdd{  /*宿舍信息*/
+    margin-top: 215px;
+}
+.ssxx{  /*宿舍信息*/
+    margin-top: 240px;
+}
+.fujian{  /*附件*/
+    margin-top: 265px;
+}
+.fujian img{  /*附件项目*/
+    width: 60px;
+    height: 60px;
+    padding-right: 5px;
 }
 #cn{    /*承诺*/
     text-align: left;
-    margin-top: 215px;
+    margin-top: 330px;
     margin-right: 22px;
     color: rgba(240,159,52,1);
 }
@@ -268,7 +282,7 @@ body{   /*全局*/
 #fqsj{  /*发起时间*/
     margin-top: 40px;
     right: 20px;
-}   
+}
 #spsj{  /*审批时间 */
     margin-top: 78px;
     right: 20px;
