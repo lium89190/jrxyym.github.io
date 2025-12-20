@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>今日校园</title>
+    <style>
+      .dashboard {
+        flex-direction: column;
+        justify-items: start;
+        display: flex;
+      }
+    </style>
 </head>
 <body>
   <span style="display: flex; align-items: center; justify-content: space-around;">
     <span id="app" style="max-width: 390px;max-height:844px;">
       <iframe id="topFrame" style="display: inline" width="390" height="844" src="./index.html"></iframe>
     </span>
-    <span>
-      <label style="display: flex; justify-content: start;">附件</label>
+    <span class="dashboard">
+      <label>附件</label>
       <input type="file" id="attachAppendInput" accept="image/*">
+      <input type="button" id="requestFullscreen" value="全屏">
     </span>
   </span>
 </body>
@@ -54,6 +62,10 @@
         // 如果选择的不是图片文件，提示用户
         alert('请选择一个有效的图片文件！');
       }
+    });
+
+    document.getElementById('requestFullscreen').addEventListener('click', () => {
+      frame.requestFullscreen();
     });
   });
 </script>
